@@ -24,7 +24,9 @@ public class ExampleCommand extends CommandBase
 
     // Called when the command is initially scheduled.
     @Override
-    public void initialize() {}
+    public void initialize() {
+        mExampleSubsystem.startTestMotor(1.0);
+    }
 
     // Called every time the scheduler runs while the command is scheduled.
     @Override
@@ -39,5 +41,7 @@ public class ExampleCommand extends CommandBase
 
     // Called once the command ends or is interrupted.
     @Override
-    public void end(boolean interrupted) {}
+    public void end(boolean interrupted) {
+        mExampleSubsystem.stopTestMotor();
+    }
 }

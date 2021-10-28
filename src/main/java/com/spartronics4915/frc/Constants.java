@@ -11,5 +11,5 @@ package com.spartronics4915.frc;
  */
 public final class Constants
 {
-
+    public static final int kTestMotorId = 0;
 }
