@@ -1,27 +1,4 @@
-# Spartronics 4915's Robot Template
-
-## Setup
-
-This repository is marked as a "Template" on Github, which allows you to create a new codebase from the latest snapshot of this code.
-Use it to create a new repository under the Spartronics4915 organization titled `XXXX-GameName`, where `XXXX` is the current year.
-Whether the repository is public (visible to other teams) or private (only visible to members of the Spartronics4915 organization) is up to you, but in the spirit of Coopertition, it should be made public at the end of the season regardless.
-
-After creating the new season's codebase, the following four changes must be made:
-
-- Update the current year in `wpilib_preferences.json`.
-- Update the current year in `settings.gradle`.
-- Refactor the `frc` folder into `frcXXXX`, where `XXXX` is the current year.
-- Change `ROBOT_MAIN_CLASS` in `build.gradle` to point to the new `Main` class: `com.spartronics4915.frcXXXX.Main`.
-
-Additionally, the following steps are advised:
-
-- Copy the contents of `SpartronicsLib` into the new codebase to facilitate [simultaneous development](https://github.com/Spartronics4915/SpartronicsLib#for-spartronics).
-  - This will override the Jitpack setup, so no need to do anything there.
-- Update vendor dependencies (the WPILib extension provides an option for this).
-- Remove this "Setup" section from the README.
-
-The `ExampleSubsystem` and `ExampleCommand` classes are non-functional and can
-be left in as a reference or taken out at your discretion.
+# Spartronics 4915's Test Bed 2021
 
 ## Usage
 
