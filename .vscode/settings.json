@@ -18,6 +18,7 @@
         "**/.gradle": true,
         "**/.project": true,
         "**/.factorypath": true,
-        "**/*~": true
+        "**/*~": true,
+        "**/.settings": true
     }
 }
