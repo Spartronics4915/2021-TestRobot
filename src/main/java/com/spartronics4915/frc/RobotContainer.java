@@ -24,7 +24,7 @@ public class RobotContainer
     public RobotContainer()
     {
         // ...and constructed here.
-        mExampleSubsystem = new ExampleSubsystem();
+        mExampleSubsystem = ExampleSubsystem.getInstance();
         mAutoCommand = new ExampleCommand(mExampleSubsystem);
 
         configureButtonBindings();

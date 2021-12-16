@@ -30,7 +30,7 @@ public class ExampleSubsystem extends SpartronicsSubsystem
         logInitialized(success);
     }
 
-    public static ExampleSubsystem getsInstance()
+    public static ExampleSubsystem getInstance()
     {
         if (sInstance == null) {
             sInstance = new ExampleSubsystem();
@@ -55,4 +55,11 @@ public class ExampleSubsystem extends SpartronicsSubsystem
     /** This method will be called once per scheduler run during simulation. */
     @Override
     public void simulationPeriodic() {}
+
+    @Override
+    public void outputTelemetry()
+    {
+        // TODO Auto-generated method stub
+
+    }
 }
