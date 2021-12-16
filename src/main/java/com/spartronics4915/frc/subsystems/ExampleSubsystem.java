@@ -30,7 +30,7 @@ public class ExampleSubsystem extends SpartronicsSubsystem
         logInitialized(success);
     }
 
-    public static ExampleSubsystem getsInstance()
+    public static ExampleSubsystem getInstance()
     {
         if (sInstance == null) {
             sInstance = new ExampleSubsystem();
