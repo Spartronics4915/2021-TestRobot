@@ -1,5 +1,7 @@
 package com.spartronics4915.frc.subsystems;
 
+import com.revrobotics.CANSparkMax;
+import com.revrobotics.CANSparkMaxLowLevel.MotorType;
 import com.spartronics4915.frc.Constants;
 import com.spartronics4915.lib.subsystems.SpartronicsSubsystem;
 import com.spartronics4915.lib.util.Logger;
@@ -13,7 +15,7 @@ public class ExampleSubsystem extends SpartronicsSubsystem
 {
     private static ExampleSubsystem sInstance = null;
     // The subsystem's hardware is defined here...
-    private static PWMSparkMax mTestMotor;
+    private static CANSparkMax mTestMotor;
 
     /** Creates a new ExampleSubsystem. */
     public ExampleSubsystem()
@@ -21,7 +23,7 @@ public class ExampleSubsystem extends SpartronicsSubsystem
         boolean success = true;
         try
         {
-            mTestMotor = new PWMSparkMax(Constants.kTestMotorId);
+            mTestMotor = new CANSparkMax(Constants.kTestMotorId, MotorType.kBrushless);
 
         }
         catch (Exception exception)
@@ -43,9 +45,9 @@ public class ExampleSubsystem extends SpartronicsSubsystem
     // Subsystem methods - actions the robot can take - should be placed here.
 
     public void startTestMotor(double speed) {
-        Logger.debug((mTestMotor.getSpeed() > 0) ? "yes" : "no");
+        Logger.debug((mTestMotor.get() > 0) ? "yes" : "no");
 
-        mTestMotor.setSpeed(speed);
+        mTestMotor.set(speed);
 
         Logger.debug("CCCCCCCCCCCCCCC");
     }
