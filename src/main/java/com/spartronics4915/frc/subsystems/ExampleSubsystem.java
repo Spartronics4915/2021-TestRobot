@@ -6,7 +6,6 @@ import com.spartronics4915.frc.Constants;
 import com.spartronics4915.lib.subsystems.SpartronicsSubsystem;
 import com.spartronics4915.lib.util.Logger;
 
-import edu.wpi.first.wpilibj.PWMSparkMax;
 
 /**
  * Detailed description of ExampleSubsystem.
