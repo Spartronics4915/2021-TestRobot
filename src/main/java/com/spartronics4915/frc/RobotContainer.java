@@ -2,6 +2,8 @@ package com.spartronics4915.frc;
 
 import com.spartronics4915.frc.commands.ExampleCommand;
 import com.spartronics4915.frc.subsystems.ExampleSubsystem;
+import com.spartronics4915.lib.subsystems.SpartronicsSubsystem;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 import edu.wpi.first.wpilibj.GenericHID;
 import edu.wpi.first.wpilibj.XboxController;
@@ -30,6 +32,7 @@ public class RobotContainer
         mAutoCommand = new ExampleCommand(mExampleSubsystem);
 
         configureButtonBindings();
+        SmartDashboard.putString("Container","Completed");
     }
 
     /** Use this method to define your button ==> command mappings. */
