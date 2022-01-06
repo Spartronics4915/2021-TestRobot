@@ -21,16 +21,6 @@
     ],
     "jniDependencies": [
         {
-            "groupId": "com.ctre.phoenix",
-            "artifactId": "cci",
-            "version": "5.19.4",
-            "isJar": false,
-            "skipInvalidPlatforms": true,
-            "validPlatforms": [
-                "linuxathena"
-            ]
-        },
-        {
             "groupId": "com.ctre.phoenix.sim",
             "artifactId": "cci-sim",
             "version": "5.19.4",
@@ -77,7 +67,6 @@
             "sharedLibrary": false,
             "skipInvalidPlatforms": true,
             "binaryPlatforms": [
-                "linuxathena",
                 "windowsx86-64",
                 "linuxx86-64",
                 "osxx86-64"
@@ -92,22 +81,9 @@
             "sharedLibrary": false,
             "skipInvalidPlatforms": true,
             "binaryPlatforms": [
-                "linuxathena",
                 "windowsx86-64",
                 "linuxx86-64",
                 "osxx86-64"
-            ]
-        },
-        {
-            "groupId": "com.ctre.phoenix",
-            "artifactId": "cci",
-            "version": "5.19.4",
-            "libName": "CTRE_PhoenixCCI",
-            "headerClassifier": "headers",
-            "sharedLibrary": false,
-            "skipInvalidPlatforms": true,
-            "binaryPlatforms": [
-                "linuxathena"
             ]
         },
         {
@@ -133,7 +109,6 @@
             "sharedLibrary": false,
             "skipInvalidPlatforms": true,
             "binaryPlatforms": [
-                "linuxathena",
                 "windowsx86-64",
                 "linuxx86-64",
                 "osxx86-64"
@@ -176,7 +151,6 @@
             "sharedLibrary": false,
             "skipInvalidPlatforms": true,
             "binaryPlatforms": [
-                "linuxathena",
                 "windowsx86-64",
                 "linuxx86-64",
                 "osxx86-64"
