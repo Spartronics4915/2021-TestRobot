@@ -2,12 +2,14 @@ package com.spartronics4915.frc;
 
 import com.spartronics4915.frc.commands.ExampleCommand;
 import com.spartronics4915.frc.subsystems.ExampleSubsystem;
+import com.spartronics4915.lib.subsystems.SpartronicsSubsystem;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 import edu.wpi.first.wpilibj.GenericHID;
 import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj2.command.Command;
 
-// Troy Edwards was here
+//
 
 /**
  * This class is where the bulk of the robot should be declared.
@@ -26,10 +28,11 @@ public class RobotContainer
     public RobotContainer()
     {
         // ...and constructed here.
-        mExampleSubsystem = new ExampleSubsystem();
+        mExampleSubsystem = ExampleSubsystem.getInstance();
         mAutoCommand = new ExampleCommand(mExampleSubsystem);
 
         configureButtonBindings();
+        SmartDashboard.putString("Container","Completed");
     }
 
     /** Use this method to define your button ==> command mappings. */

@@ -19,5 +19,6 @@
         "**/.project": true,
         "**/.factorypath": true,
         "**/*~": true
+
     }
 }
