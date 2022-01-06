@@ -2,8 +2,9 @@ package com.spartronics4915.frc.subsystems;
 
 import com.spartronics4915.frc.Constants;
 import com.spartronics4915.lib.subsystems.SpartronicsSubsystem;
+import com.spartronics4915.lib.util.Logger;
 
-import edu.wpi.first.wpilibj.Talon;
+import edu.wpi.first.wpilibj.PWMSparkMax;
 
 /**
  * Detailed description of ExampleSubsystem.
@@ -12,7 +13,7 @@ public class ExampleSubsystem extends SpartronicsSubsystem
 {
     private static ExampleSubsystem sInstance = null;
     // The subsystem's hardware is defined here...
-    private static Talon mTestMotor;
+    private static PWMSparkMax mTestMotor;
 
     /** Creates a new ExampleSubsystem. */
     public ExampleSubsystem()
@@ -20,7 +21,8 @@ public class ExampleSubsystem extends SpartronicsSubsystem
         boolean success = true;
         try
         {
-            mTestMotor = new Talon(Constants.kTestMotorId);
+            mTestMotor = new PWMSparkMax(Constants.kTestMotorId);
+
         }
         catch (Exception exception)
         {
@@ -41,11 +43,16 @@ public class ExampleSubsystem extends SpartronicsSubsystem
     // Subsystem methods - actions the robot can take - should be placed here.
 
     public void startTestMotor(double speed) {
-        mTestMotor.set(speed);
+        Logger.debug((mTestMotor.getSpeed() > 0) ? "yes" : "no");
+
+        mTestMotor.setSpeed(speed);
+
+        Logger.debug("CCCCCCCCCCCCCCC");
     }
 
     public void stopTestMotor() {
-        mTestMotor.set(0.0);
+
+        // mTestMotor.set(0.0);
     }
 
     /** This method will be called once per scheduler run. */
@@ -56,10 +63,10 @@ public class ExampleSubsystem extends SpartronicsSubsystem
     @Override
     public void simulationPeriodic() {}
 
-    @Override
+
     public void outputTelemetry()
     {
         // TODO Auto-generated method stub
-
+        logInfo("YEETUS");
     }
 }

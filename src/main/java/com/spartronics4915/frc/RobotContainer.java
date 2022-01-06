@@ -2,6 +2,7 @@ package com.spartronics4915.frc;
 
 import com.spartronics4915.frc.commands.ExampleCommand;
 import com.spartronics4915.frc.subsystems.ExampleSubsystem;
+import com.spartronics4915.lib.util.Logger;
 
 import edu.wpi.first.wpilibj.GenericHID;
 import edu.wpi.first.wpilibj.XboxController;

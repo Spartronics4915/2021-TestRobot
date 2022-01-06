@@ -1,6 +1,7 @@
 package com.spartronics4915.frc.commands;
 
 import com.spartronics4915.frc.subsystems.ExampleSubsystem;
+import com.spartronics4915.lib.util.Logger;
 
 import edu.wpi.first.wpilibj2.command.CommandBase;
 
@@ -25,12 +26,14 @@ public class ExampleCommand extends CommandBase
     // Called when the command is initially scheduled.
     @Override
     public void initialize() {
+
         mExampleSubsystem.startTestMotor(1.0);
     }
 
     // Called every time the scheduler runs while the command is scheduled.
     @Override
-    public void execute() {}
+    public void execute() {
+    }
 
     // Returns true when the command should end.
     @Override
