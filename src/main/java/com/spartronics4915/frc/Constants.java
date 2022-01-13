@@ -12,4 +12,5 @@ package com.spartronics4915.frc;
 public final class Constants
 {
     public static final int kTestMotorId = 1;
+    public static final double kTestMotorSpeed = 0.3;
 }
