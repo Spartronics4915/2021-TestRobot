@@ -47,18 +47,19 @@ public final class Constants
     }
 
     // from atlas 2020
-    public static final class DriveStraightConstants
-    {
-        public static final double kP = 0; // Was 0.4
-        public static final double kI = 0.2;
-        public static final double kD = 0;
-        public static final double kAllowedError = 0; // In degrees
-    }
+    // public static final class DriveStraightConstants
+    // {
+    //     public static final double kP = 0; // Was 0.4
+    //     public static final double kI = 0.2;
+    //     public static final double kD = 0;
+    //     public static final double kAllowedError = 0; // In degrees
+    // }
 
     public static final class JoystickMotorConstants
     {
-        public static final double kMotorSpeedMultiplier = 1;
+        public static final double kMotorSpeedMultiplier = 0.5;
         public static final double kMotorSlowSpeed = 0.3;
         public static final double kJoystickDeadzone = 0.1;
+        public static final double kJoystickResponseCurve = 5.0/3.0;
     }
 }

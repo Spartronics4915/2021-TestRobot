@@ -3,7 +3,7 @@ package com.spartronics4915.frc.commands;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import edu.wpi.first.wpilibj.Joystick;
 
-import com.spartronics4915.frc.Constants;
+import com.spartronics4915.frc.Constants.*;
 import com.spartronics4915.frc.subsystems.JoystickMotor;
 
 public class JoystickMotorCommand extends CommandBase
@@ -29,7 +29,7 @@ public class JoystickMotorCommand extends CommandBase
 
         if (mSlow)
         {
-            y *= Constants.JoystickMotorConstants.kMotorSlowSpeed;
+            y *= JoystickMotorConstants.kMotorSlowSpeed;
         }
 
         if (mInverted)
@@ -38,8 +38,8 @@ public class JoystickMotorCommand extends CommandBase
         }
 
         // copied from 2020-InfiniteRecharge, no idea how it works (magic)
-        y = Math.copySign(Math.pow(Math.abs(y), 5.0/3.0), y); // apply response curve
-        mJoystickMotor.set(applyDeadzone(y, Constants.JoystickMotorConstants.kJoystickDeadzone));
+        y = Math.copySign(Math.pow(Math.abs(y), JoystickMotorConstants.kJoystickResponseCurve), y); // apply response curve
+        mJoystickMotor.set(applyDeadzone(y, JoystickMotorConstants.kJoystickDeadzone));
     }
 
     // also copied from ir2020
