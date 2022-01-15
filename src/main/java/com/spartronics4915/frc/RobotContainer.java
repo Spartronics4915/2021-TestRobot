@@ -1,13 +1,17 @@
 package com.spartronics4915.frc;
 
 import com.spartronics4915.frc.commands.ExampleCommand;
+import com.spartronics4915.frc.commands.JoystickMotorCommands;
 import com.spartronics4915.frc.subsystems.ExampleSubsystem;
+import com.spartronics4915.frc.subsystems.JoystickMotor;
 import com.spartronics4915.lib.subsystems.SpartronicsSubsystem;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 import edu.wpi.first.wpilibj.GenericHID;
+import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj2.command.Command;
+import edu.wpi.first.wpilibj.RobotBase;
 
 //
 
@@ -21,15 +25,25 @@ import edu.wpi.first.wpilibj2.command.Command;
 public class RobotContainer
 {
     // The robot's subsystems and commands are defined here...
-    public final ExampleSubsystem mExampleSubsystem;
-    public final ExampleCommand mAutoCommand;
+    // public final ExampleSubsystem mExampleSubsystem;
+    public final JoystickMotor mJoystickMotor;
+
+    // public final ExampleCommand mAutoCommand;
+    public final JoystickMotorCommands mJoystickMotorCommands;
+
+    private final int mJoystickPort = Constants.OI.kJoystickId;
 
     /** The container for the robot. Contains subsystems, OI devices, and commands. */
     public RobotContainer()
     {
+
+
         // ...and constructed here.
-        mExampleSubsystem = ExampleSubsystem.getInstance();
-        mAutoCommand = new ExampleCommand(mExampleSubsystem);
+        // mExampleSubsystem = ExampleSubsystem.getInstance();
+        // mAutoCommand = new ExampleCommand(mExampleSubsystem);
+
+        mJoystickMotor = JoystickMotor.getInstance();
+        mJoystickMotorCommands = new JoystickMotorCommands(mJoystickMotor);
 
         configureButtonBindings();
         SmartDashboard.putString("Container","Completed");
@@ -45,6 +59,6 @@ public class RobotContainer
      */
     public Command getAutonomousCommand()
     {
-        return mAutoCommand;
+        return null;
     }
 }
