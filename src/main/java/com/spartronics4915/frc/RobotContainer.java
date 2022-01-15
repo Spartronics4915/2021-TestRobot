@@ -1,5 +1,6 @@
 package com.spartronics4915.frc;
 
+import com.spartronics4915.frc.Constants;
 import com.spartronics4915.frc.commands.ExampleCommand;
 import com.spartronics4915.frc.commands.JoystickMotorCommands;
 import com.spartronics4915.frc.subsystems.ExampleSubsystem;
@@ -11,6 +12,10 @@ import edu.wpi.first.wpilibj.GenericHID;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj2.command.Command;
+import edu.wpi.first.wpilibj2.command.button.JoystickButton;
+import edu.wpi.first.wpilibj2.command.PIDCommand;
+import edu.wpi.first.wpilibj2.command.ScheduleCommand;
+import edu.wpi.first.wpilibj.controller.PIDController;
 import edu.wpi.first.wpilibj.RobotBase;
 
 //
@@ -31,7 +36,8 @@ public class RobotContainer
     // public final ExampleCommand mAutoCommand;
     public final JoystickMotorCommands mJoystickMotorCommands;
 
-    private final int mJoystickPort = Constants.OI.kJoystickId;
+    // private final int kJoystickPort = Constants.OI.kJoystickId;
+    public static final Joystick mDriverController = new Joystick(Constants.OI.kJoystickId);
 
     /** The container for the robot. Contains subsystems, OI devices, and commands. */
     public RobotContainer()
@@ -47,10 +53,15 @@ public class RobotContainer
 
         configureButtonBindings();
         SmartDashboard.putString("Container","Completed");
+
+        mJoystickMotor.setDefaultCommand(new JoystickMotorCommands(mJoystickMotor));
     }
 
     /** Use this method to define your button ==> command mappings. */
-    private void configureButtonBindings() {}
+    private void configureButtonBindings()
+    {
+
+    }
 
     /**
      * Use this to pass the autonomous command to the main {@link Robot} class.

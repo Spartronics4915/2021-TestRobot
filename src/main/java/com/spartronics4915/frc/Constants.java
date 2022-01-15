@@ -19,6 +19,7 @@ public final class Constants
     public static final class OI
     {
         public static final int kJoystickId = 0;
+        public static final int kDriveStraightDriveStickButton = 8;
 
         // this block also copied from ir2020 (magic)
         public static final int kButtonBoardId = 1;
@@ -43,6 +44,15 @@ public final class Constants
             deviceList[0] = new DeviceSpec("Logitech Attack 3", kJoystickId, 12);
             deviceList[1] = new DeviceSpec("ButtonBoard", kButtonBoardId, 18);
         }
+    }
+
+    // from atlas 2020
+    public static final class DriveStraightConstants
+    {
+        public static final double kP = 0; // Was 0.4
+        public static final double kI = 0.2;
+        public static final double kD = 0;
+        public static final double kAllowedError = 0; // In degrees
     }
 
     public static final class JoystickMotorConstants

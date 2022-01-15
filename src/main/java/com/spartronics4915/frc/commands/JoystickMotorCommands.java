@@ -6,16 +6,16 @@ import edu.wpi.first.wpilibj.Joystick;
 import com.spartronics4915.frc.Constants;
 import com.spartronics4915.frc.subsystems.JoystickMotor;
 
-public class JoystickMotorCommands
+public class JoystickMotorCommands extends CommandBase
 {
-    private final JoystickMotor mMotor;
+    private final JoystickMotor mJoystickMotor;
     private final Joystick mJoystick;
     private boolean mInverted;
     private boolean mSlow;
 
     public JoystickMotorCommands(JoystickMotor motor)
     {
-        mMotor = motor;
+        mJoystickMotor = motor;
         mJoystick = motor.getJoystick();
         mInverted = false;
         mSlow = false;
@@ -25,7 +25,7 @@ public class JoystickMotorCommands
     {
         public TeleOpCommand()
         {
-            addRequirements(mMotor);
+            addRequirements(mJoystickMotor);
         }
 
         @Override
@@ -45,7 +45,7 @@ public class JoystickMotorCommands
 
             // copied from 2020-InfiniteRecharge, no idea how it works (magic)
             y = Math.copySign(Math.pow(Math.abs(y), 5.0/3.0), y); // apply response curve
-            mMotor.set(applyDeadzone(y, Constants.JoystickMotorConstants.kJoystickDeadzone));
+            mJoystickMotor.set(applyDeadzone(y, Constants.JoystickMotorConstants.kJoystickDeadzone));
         }
 
         // also copied from ir2020
