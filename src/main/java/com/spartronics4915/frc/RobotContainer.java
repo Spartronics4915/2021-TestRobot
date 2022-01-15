@@ -2,7 +2,7 @@ package com.spartronics4915.frc;
 
 import com.spartronics4915.frc.Constants;
 import com.spartronics4915.frc.commands.ExampleCommand;
-import com.spartronics4915.frc.commands.JoystickMotorCommands;
+import com.spartronics4915.frc.commands.JoystickMotorCommand;
 import com.spartronics4915.frc.subsystems.ExampleSubsystem;
 import com.spartronics4915.frc.subsystems.JoystickMotor;
 import com.spartronics4915.lib.subsystems.SpartronicsSubsystem;
@@ -34,7 +34,7 @@ public class RobotContainer
     public final JoystickMotor mJoystickMotor;
 
     // public final ExampleCommand mAutoCommand;
-    public final JoystickMotorCommands mJoystickMotorCommands;
+    public final JoystickMotorCommand mJoystickMotorCommands;
 
     // private final int kJoystickPort = Constants.OI.kJoystickId;
     public static final Joystick mDriverController = new Joystick(Constants.OI.kJoystickId);
@@ -49,12 +49,12 @@ public class RobotContainer
         // mAutoCommand = new ExampleCommand(mExampleSubsystem);
 
         mJoystickMotor = JoystickMotor.getInstance();
-        mJoystickMotorCommands = new JoystickMotorCommands(mJoystickMotor);
+        mJoystickMotorCommands = new JoystickMotorCommand(mJoystickMotor);
 
         configureButtonBindings();
         SmartDashboard.putString("Container","Completed");
 
-        mJoystickMotor.setDefaultCommand(new JoystickMotorCommands(mJoystickMotor));
+        mJoystickMotor.setDefaultCommand(new JoystickMotorCommand(mJoystickMotor));
     }
 
     /** Use this method to define your button ==> command mappings. */
